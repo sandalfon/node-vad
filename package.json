@@ -1,17 +1,20 @@
 {
-  "name": "node-vad",
+  "name": "node-lips-vad",
   "author": {
-    "name": "Snirpo"
+    "name": "sandalfon"
   },
   "description": "Voice Activity Detection library for Node",
   "version": "1.1.4",
+  "main": "./index.js",
+  "type": "module",
   "scripts": {
     "install": "node-gyp rebuild",
     "release-patch": "npm version patch && npm publish",
     "release-minor": "npm version minor && npm publish",
-    "release-major": "npm version major && npm publish"
+    "release-major": "npm version major && npm publish",
+    "code-style": "xo"
   },
-  "main": "./index.js",
+
   "license": "MIT",
   "engines": {
     "node": ">=6.14.3",
@@ -22,12 +25,33 @@
     "nan": "^2.14.0",
     "util-promisifyall": "^1.0.6"
   },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "pre-commit": "^1.2.2",
+    "wavefile": "^11.0.0",
+    "xo": "^0.44.0"
+  },
   "gypfile": true,
-  "maintainers": [
-    {
-      "name": "snirpo",
-      "email": "snirpo@gmail.com"
-    }
+  "repository": "github:sandalfon/node-vad",
+  "pre-commit": [
+    "code-style"
   ],
-  "repository": "github:snirpo/node-vad"
+  "xo": {
+    "space": 2,
+    "prettier": true,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": 0,
+      "unicorn/no-array-callback-reference": 0,
+      "unicorn/no-reduce": 0
+    },
+    "envs": [
+      "mocha"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "packageManager": "yarn@3.0.1"
 }

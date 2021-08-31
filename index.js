@@ -1,3 +1,3 @@
-const VAD = require('./lib/vad');
+import {VAD} from './lib/vad.js';
 
-module.exports = VAD;
+export {VAD};

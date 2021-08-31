@@ -1,4 +1,4 @@
-# node-vad
+# node-lips-vad
 
 This is a stripped down version of this library (https://github.com/voixen/voixen-vad). Thank you very much!
 
